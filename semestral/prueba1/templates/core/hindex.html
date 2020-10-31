@@ -1,0 +1,111 @@
+{%extends "core/base.html" %}
+{% load static %}
+
+{% block contenido %}
+        <div id="contenido">
+
+
+            <div id="section">
+                <h1>Servicios de Lavados</h1>
+
+                <div class="servicio">
+                    <h3>(1) Servicio Básico</h3>
+                    <img src="{% static 'img/fondo.jpg' %}">
+                    <ul>
+                        <li>Limpieza de vidrios y espejos</li>
+                        <li>Lavado exterior</li>
+                        <li>Lavado de alfombrilla</li>
+
+                    </ul>
+                </div>
+                <div class="servicio">
+                    <h3>(2) Servicio Medium</h3>
+                    <img src="{% static 'img/imagen3.jpg' %}">
+                    <ul>
+                        <li>Todo el servicio básico</li>
+                        <li>Renovador de Gomas en neumáticos</li>
+                        <li>Encerado de carrocería con cera líquida</li>
+                        <li>Limpieza de plásticos y molduras exteriores</li>
+
+                    </ul>
+                </div>
+                <div class="servicio">
+                    <h3>(3) Servicio Premium</h3>
+                    <img src="{% static 'img/interior.jpg' %}">
+                    <ul>
+                        <li>Todo el servicio 1 y 2</li>
+                        <li>Limpieza Interior de vidrios</li>
+                        <li>Limpieza interior detallada</li>
+                        <li>Aspirado full</li>
+                        <li>Pulido de llantas</li>
+                    </ul>
+                </div>
+                <div class="servicio">
+                    <h3>(4) Servicio Premium Plus</h3>
+                    <img src="{% static 'img/premiun plus.jpg' %}">
+                    <ul>
+                        <li>Servicios anteriores completos</li>
+                        <li>Pulido de carrocería</li>
+                        <li>Pulido de focos</li>
+                        <li>Descontaminación de la Pintura</li>
+                        <li>Limpieza y lavado de tapiz</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="aside">
+                <div class="slider">
+                    <ul>
+                        {% for item in autos %}
+                           <li><img src="{{item.imagen.url}}"></li>
+                        
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <h1>Clientes Felices</h1>
+                <div class="circular">
+                    <h3>El Peluca</h3>
+                    <img src="{% static 'img/hagrid-1280x720.jpg' %} ">
+                    <li>Muy recomendable, mi auto quedó impecable!
+                        Excelente servicio y atención.</li>
+                </div>
+                <div class="circular">
+                    <h3>Fue el Negro</h3>
+                    <img src="{% static 'img/comentarios.png' %} ">
+                    <li>Muy buena atención y servicio ! Se nota que hay dedicación
+                         en la empresa y compromiso con el cliente.</li>
+                </div>
+                <div class="circular">
+                    <h3> Vegeta777 </h3>
+                    <img src="{% static 'img/asdasdasdasdasd.jpg' %} ">
+                    <li>Le hice un lavado exterior a mi auto y el resultado fue excelente,
+                        dejaron el auto totalmente limpio, incluso en rincones de difícil acceso.</li>
+
+                </div>
+
+
+            </div>
+        </div>
+
+{% endblock contenido %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

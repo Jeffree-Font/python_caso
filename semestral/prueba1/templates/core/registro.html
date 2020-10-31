@@ -1,0 +1,77 @@
+{%extends "core/base.html" %}
+{% load static %}
+
+{% block contenido %}
+<div id="contenido">
+    <div id="section">
+        {% block js %}
+
+        <script src="{% static 'js/scripts.js' %}"></script>
+
+        <form action="{% url 'FORMU' %}" method="POST" class="form-register" onsubmit="return validarTodo()">
+            {% csrf_token %}
+            <div class="registro">
+                <h4>Formulario Registro de Usuario</h4>
+                <tr>
+                    <td>Nombre:
+                    <td><input class="formu" type="text" id="txtNombre" placeholder="Ingrese nombre" minlength="3"
+                            maxlength="80" name="txtNombre" required></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Apellido:
+                    <td><input class="formu" type="text" id="txtApellido" placeholder="Ingrese apellido" minlength="3"
+                            maxlength="80" name="txtApellido" required></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email:
+                    <td><input class="formu" type="email" id="txtEmail" name="txtEmail" placeholder="Ingrese email"
+                            required></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nombre de usuario:
+                    <td><input class="formu" type="text" id="txtUsuario" name="txtUsuario"
+                            placeholder="Ingrese nombre de usuario" minlength="8" required></td>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Contraseña:
+                    <td><input class="formu" type="password" id="txtContraseña" name="password" minlength="8" required>
+                    </td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Repetir Contraseña:
+                    <td><input class="formu" type="password" id="txtContraseña" name="password2" minlength="8" required>
+                    </td>
+                    </td>
+                </tr>
+
+                <tr>
+                    <input class="boton" type="submit" value="Registrar">
+                    <input class="boton" type="reset" value="Limpiar">
+                </tr>
+            </div>
+            {% endblock js %}
+        </form>
+        <div style="text-align: center;color:black;font-size: 25px;">
+            {{msg}}
+        </div>
+    </div>
+
+    <div id="aside">
+        
+
+            <img src="{% static 'img/icono.png' %}">
+    </div>
+</div>
+{% endblock contenido %}
+
+
+
+</body>
+
+</html>

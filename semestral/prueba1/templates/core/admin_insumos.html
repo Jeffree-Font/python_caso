@@ -1,0 +1,63 @@
+{%extends "core/base.html" %}
+{% load static %}
+
+{% block contenido %}
+<div id="contenido">
+
+
+    <div id="registro_insumo">
+        <div class="insumoss">
+            <form action="" method="POST" onsubmit="return validarTodo()">
+                {% csrf_token %}
+                <div class="Insumos">
+                    <h1>Administración de Insumos</h1>
+                    <tr>
+                        <td> Nombre de insumo:
+                        <td><input class="formu" type="text" id="txtInsumo" name="txtInsumo"
+                                placeholder="Ingrese nombre de insumo" minlength="3" maxlength="120" required></td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Precio:
+                        <td><input class="formu" type="number" id="txtPrecio" name="txtPrecio"
+                                placeholder="Ingrese Precio, min $1" minlength="1" required></td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Descripción Insumo
+                        <td><input class="formu" type="text" id="txtDescrip" name="txtDescrip" placeholder="Ingrese Descripción"
+                                minlength="3" maxlength="200"></td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Stock:
+                        <td><input class="formu" type="number" id="txtStock" name="txtStock"
+                                placeholder="Ingrese Stock, min 0" minlength="0" required></td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <input class="boton" name="accion" type="submit" value="registrar">
+                        <input class="boton" name="accion" type="submit" value="eliminar">
+                        <input class="boton" name="accion" type="submit" value="actualizar">
+                    </tr>
+                    <div style="text-align: center;color:black;font-size: 25px;">
+                        <h2>{{mensaje}}</h2>
+                    </div>
+                </div>
+                <div class="automisionvision">
+                    <img src="{% static 'img/icono.png' %}">
+                </div>
+        </div>
+    </div>
+    
+
+</div>
+{% endblock contenido %}
+
+
+
+
+
+</body>
+
+</html>

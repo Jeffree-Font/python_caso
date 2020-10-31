@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+{%load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavado De Autos</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css'  %}">
+    <link rel="shortcut icon" href="{% static 'img/icono2.png' %}" type="image/x-icon">
+</head>
+
+<body>
+    <div id="contenedor">
+
+        <div id="header">
+            <h1>Lavado de Autos</h1>
+            <img src="{% static 'img/icono.png' %}">
+            <div id="nav">
+                <nav>
+                    <ul>
+                        <font size=4>
+                            <li><a href="{% url 'HINDEX' %}">Inicio</a></li>
+                            <li><a href="{% url 'MISION' %}">Propósito</a></li>
+                            <li><a href="{% url 'UBICACION' %}">Dirección</a></li>
+                            <li><a href="{% url 'GALE' %}">Galería</a></li>
+                            {%if user.is_authenticated%}
+                            <li><a href="{% url 'FORMU' %}">Registros</a></li>
+                            <li><a href="{% url 'INSUMOS' %}">Insumos</a></li>
+                            <li><a href="{% url 'ADMIN' %}">Admin</a></li>
+                            <li><a href="{% url 'LOGOUT' %}">Cerrar Sesión</a></li>
+                            <li><a href="">Bienvenido! {{user.first_name}} {{user.last_name}}</a></li>
+                            {% else %}
+                            
+                            <li><a href="{% url 'LOGIN' %}">Inicio Sesion</a>
+                            
+                                {% endif %}
+                        </font size=4>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+
+        {%block contenido%}
+
+        {% block js %}
+
+        {% endblock js %}
+
+        {%endblock contenido %}
+
+
+        <div id="footer">
+            <ul>
+                <font size=4>
+                            <li><a href="{% url 'HINDEX' %}">Inicio</a></li>
+                            <li><a href="{% url 'MISION' %}">Propósito</a></li>
+                            <li><a href="{% url 'UBICACION' %}">Dirección</a></li>
+                            <li><a href="{% url 'GALE' %}">Galería</a></li>
+                </font size=4>
+            </ul>
+                <h1> Av.Fraternidad #1597    -      Email:lavadodeautos@gmail.com    -     Teléfono:+56981934503</h1>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

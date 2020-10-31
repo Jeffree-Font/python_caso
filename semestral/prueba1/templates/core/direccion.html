@@ -1,0 +1,48 @@
+{%extends "core/base.html" %}
+{% load static %}
+
+{% block contenido %}
+        <div id="contenido">
+
+            <div id="section">
+                <h1>Casa Matríz</h1>
+
+                <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4566.153203660641!2d-70.56902287036526!3d-33.59576281647758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d6fca742924f%3A0xbf818b51b05c9c3e!2sFraternidad%201597%2C%20Puente%20Alto%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1599701491107!5m2!1ses!2scl"
+                width="778" height="687" frameborder="0" style="border-radius: 10px" allowfullscreen="" aria-hidden="false"
+                tabindex="0"></iframe>
+
+
+            </div>
+
+
+            <div id="aside">
+                <font size=2>
+                <h1>Dirección: Av. Fraternidad #1597 Pte Alto</h1>
+                </font size=2> 
+                <img src="{% static 'img/direccion.jpg' %}" width="537" height="350" >
+
+
+                
+                <h3> ________________________________________________________</h3>
+                <div class="textodireccion">
+                <h2>Referencia para llegar: Estamos ubicados a 2km del Tottus en Puente Alto
+                en dirección a la cordillera por Av. San Carlos.
+                hasta encontrar una carnicería en una esquina
+                de nombre Los Olmos, girar a mano derecha y te encontrarás 
+                de frente el local</h2>
+                </div>
+                <h3> ________________________________________________________</h3>
+                <img src="{% static 'img/icono.png' %}" width="170" height="170">
+                
+            </div>
+
+        </div>
+{% endblock contenido %}
+
+
+
+</body>
+
+</html>
+

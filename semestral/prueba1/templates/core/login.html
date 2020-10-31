@@ -1,0 +1,53 @@
+{%extends "core/base.html" %}
+{% load static %}
+
+{% block contenido %}
+<div id="contenido">
+    <div id="section">
+        {% block js %}
+
+        <script src="{% static 'js/scripts.js' %}"></script>
+
+        <form action="{% url 'LOGIN' %}" method="POST" onsubmit="return validarTodo()">
+            {% csrf_token %}
+            <div class="registro">
+                <h4>Login de Acceso</h4>
+                <tr>
+                    <td>Nombre de Usuario:
+                    <td><input class="formu" type="text" id="txtNombre" placeholder="Ingrese nombre de usuario"
+                            minlength="3" name=nombrex maxlength="80"></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Contraseña:
+                    <td><input class="formu" type="password" id="txtContraseña" name="password"
+                            placeholder="Ingrese contraseña" minlength="8" required></td>
+                    </td>
+                </tr>
+                <tr>
+                    <input class="boton" type="submit" value="Conectar">
+                </tr>
+                <div style="text-align: center;color: black;font-size: 30px;">
+                    {{msg}}
+                </div>
+            </div>
+            {% endblock js %}
+        </form>
+        <div style="text-align: center;color:black;font-size: 25px;">
+            {{msg}}
+        </div>
+    </div>
+
+    <div id="aside">
+
+
+        <img src="{% static 'img/icono.png' %}">
+    </div>
+</div>
+{% endblock contenido %}
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+{%extends "core/base.html" %}
+{% load static %}
+
+{% block contenido %}
+        <div id="contenido">
+
+
+            <div id="mision_vision">
+            {% for item in mision %}
+                <h1>Propósito de la Empresa</h1>
+                <div class="mision">
+                    <img src="{% static 'img/adsfasdfasdf.jpg' %}">
+                    <h1>Misión</h1>
+                    <h3>{{item.mision}}</h3>
+
+                    <h4>_________________________________________________________________________________________________
+                    </h4>
+
+                    <h1>Visión</h1>
+                    <h3>{{item.vision}}</h3>
+                    <h4>_________________________________________________________________________________________________
+                    </h4>
+                    <div class="automisionvision">
+                        <img src="{% static 'img/icono.png' %}">
+                    </div>
+
+
+                </div>
+            {% endfor %}
+            </div>
+
+        </div>
+{% endblock contenido %}
+
+
+
+
+
+</body>
+
+</html>
